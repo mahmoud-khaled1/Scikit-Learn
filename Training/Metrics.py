@@ -62,6 +62,9 @@ ACCSCORE=accuracy_score(y_true=y_true,y_pred=y_pre,normalize=True)
 print("Accuracy",ACCSCORE)
 #----------------------------------------------
 #F1 Score Calculation
+#The F1 score can be interpreted as a weighted average of the precision and recall, where an F1 score reaches
+# its best value at 1 and worst score at 0.
+# The relative contribution of precision and recall to the F1 score are equal. The formula for the F1 score is:
 #F1 Score=2*(precision * recall)/(precision+recall)
 
 from sklearn.metrics import f1_score
@@ -92,4 +95,101 @@ Pre=recall_score(y_true=y_true,y_pred=y_pre,labels=None,average='micro')
 
 print(Pre)
 #----------------------------------------------
+from sklearn.metrics import precision_recall_fscore_support
+# this class calc precision and recall and f1 score and support at the same time Return array of them
+y_true=[1,0,1,1,0,0,1]
+y_pre= [1,0,0,1,0,1,1]
 
+Pre_Recall_F1Score=precision_recall_fscore_support(y_true=y_true,y_pred=y_pre,average='micro')
+
+print(Pre_Recall_F1Score)
+
+#------------------------------------------------
+from sklearn.metrics import precision_recall_curve
+y_true=[1,0,1,1,0,0,1]
+y_pre= [1,0,0,1,0,1,1]
+
+precsion,recall,thresholds=precision_recall_curve(y_pre,y_true)
+
+print(precsion)
+print(recall)
+print(thresholds)
+#-------------------------------------------------
+#classification Report
+#وهي تقوم بحساب كلا من : precision , recall , f1score , support  لكل قيمة من القيم , سواء ارقام او نصوص , كما تقوم بإظهار المتوسطات بأنواعها macro , micro , support
+
+from sklearn.metrics import classification_report
+y_true=[1,0,1,1,0,0,1]
+y_pre= [1,0,0,1,0,1,1]
+
+CR=classification_report(y_true=y_true,y_pred=y_pre)
+
+print(CR)
+#-------------------------------------------------
+#اداة الـ ROC و هي اختصار Receiver operating characteristic , وهي فقط تستخدم مع التصنيف الثنائي binary classification
+
+#هي اداة لتحديد القيمة المناسبة للـ sensitivity & specificity  , واختيار الـ threshold  المناسبة , مع ملاحظة اننا نعطيها y_pred_prob  فهي تاخذ احتمالية و ليست قيم متوقعة
+
+#تعطي 3 قيم , fpr  و هي false positive rate  و تساوي 1- specificity و tpr  و هي true positive rate و تساوي sensitivity و قيمة الثريشهولد المناسبة
+
+from sklearn.metrics import roc_curve
+
+#Calculating Receiver Operating Characteristic :
+#roc_curve(y_true, y_score, pos_label=None, sample_weight=None,drop_intermediate=True)
+
+y_test=[1,0,1,1,0,0,1]
+y_pre= [1,0,0,1,0,1,1]
+fprValue, tprValue, thresholdsValue = roc_curve(y_test,y_pre)
+print('fpr Value  : ', fprValue)
+print('tpr Value  : ', tprValue)
+print('thresholds Value  : ', thresholdsValue)
+#-------------------------------------------------
+
+#أداة AUC  و هي اختصار area under curve
+#و هي التي تقوم بحساب المساحة تحت المنحني السابق شرحه , ولاحظ ان كلما زادت المساحة تحت المنحني كلما دل هذا علي دقة الخوارزم , وذلك لانه يتيح قيم عالية الـ sensitivity & specificity   معا
+#Calculating Area Under the Curve :
+from sklearn.metrics import roc_curve
+from sklearn.metrics import auc
+
+fprValue2, tprValue2, thresholdsValue2 = roc_curve(y_test,y_pre)
+AUCValue = auc(fprValue2, tprValue2)
+#print('AUC Value  : ', AUCValue)
+
+import numpy as np
+from sklearn import metrics
+y =      np.array([1    , 1     , 2     , 2])
+scores = np.array([0.1  , 0.4   ,   0.35, 0.8])
+fpr, tpr, thresholds = metrics.roc_curve(y, scores, pos_label=2)
+
+metrics.auc(fpr, tpr)
+#---------------------------------------------
+#و هذا الأمر يجمع الأمرين السابقين معا , اذ اننا نقوم بحساب auc  مباشرة من القيم دون تطبيق  roc   اولا
+#Import Libraries
+from sklearn.metrics import roc_auc_score
+#----------------------------------------------------
+#Calculating ROC AUC Score:
+#roc_auc_score(y_true, y_score, average=’macro’, sample_weight=None,max_fpr=None)
+
+ROCAUCScore = roc_auc_score(y_test,y_pre, average='micro') #it can be : macro,weighted,samples
+#print('ROCAUC Score : ', ROCAUCScore)
+
+import numpy as np
+from sklearn import metrics
+y =      np.array([1    , 1     , 2     , 2])
+scores = np.array([0.1  , 0.4   ,   0.35, 0.8])
+metrics.roc_auc_score(y, scores)
+#---------------------------------------------
+#و هي تقوم بحساب عدد مرات اللا تطابق  . .
+
+# Import Libraries
+from sklearn.metrics import zero_one_loss
+# Calculating Zero One Loss:
+# zero_one_loss(y_true, y_pred, normalize = True, sample_weight = None)
+ZeroOneLossValue = zero_one_loss(y_test, y_pre, normalize=False)
+# print('Zero One Loss Value : ', ZeroOneLossValue )
+from sklearn.metrics import zero_one_loss
+
+y_pred = [1, 2, 3, 4]
+y_true = [2, 2, 3, 4]
+zero_one_loss(y_true, y_pred)
+zero_one_loss(y_true, y_pred, normalize=False)
