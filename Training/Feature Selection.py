@@ -53,7 +53,7 @@ print('X Shape :',X.shape)
 print("Y Shape :",Y.shape)
 
 #--------------------------------------
-#Select From model Just gave data to specific model like SVM, Random Forest ... to select best feature
+#Select From model Just gave data to specific model like SVM, Random Forest ... to select best feature from it
 from sklearn.feature_selection import SelectFromModel
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_breast_cancer
