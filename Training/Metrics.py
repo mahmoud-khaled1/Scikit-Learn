@@ -76,6 +76,7 @@ F1_Score=f1_score(y_true=y_true,y_pred=y_pre,average='binary') # average can be 
 print(F1_Score)
 
 #----------------------------------------------
+
 # Precision =(TP)/(TP+FP)
 from sklearn.metrics import precision_score
 y_true=[1,0,1,1,0,0,1]
