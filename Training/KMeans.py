@@ -196,3 +196,29 @@ ax.set_yticks(())
 
 plt.show()
 
+#-----------------------------------------------
+#PCA
+#المسؤله عن تقليل الابعاد في التعلم بدون اشراف
+#PCA is responsibility of reduction and minimization  of Features(not delete Features but reduction Features) to make algorithm more optimal
+import numpy as np
+from sklearn.decomposition import PCA
+X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+#n_components : number of Feature will remain هيدمج الفيوتشر مع بعض وعددهم هيبقي دا
+#svd_solver : (auto,full,arpack,randomized
+pca = PCA(n_components=2)
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+print(pca.singular_values_)
+
+
+pca = PCA(n_components=2, svd_solver='full')
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+print(pca.singular_values_)
+
+pca = PCA(n_components=1, svd_solver='arpack')
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+print(pca.singular_values_)
+
+
