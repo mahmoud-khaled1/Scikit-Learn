@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda56730-4aab-47fd-88ce-13b699a1ff59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Voting Classifier.py" afterDir="false" />
+    <list default="true" id="cda56730-4aab-47fd-88ce-13b699a1ff59" name="Default Changelist" comment="git &quot;add&quot;.">
+      <change afterPath="$PROJECT_DIR$/KNN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Voting Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/Voting Classifier.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +33,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Voting Classifier">
-    <configuration name="Decision Tree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.KNN">
+    <configuration name="KNN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Training" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -45,7 +46,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Decision Tree.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KNN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -54,7 +55,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="KMeans" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Training" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,11 +63,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/EyeTracker-master" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KMeans.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/EyeTracker-master/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.KNN" />
+        <item itemvalue="Python.Main" />
         <item itemvalue="Python.Voting Classifier" />
         <item itemvalue="Python.Random Forest Classifier" />
         <item itemvalue="Python.Random Forest Regressor" />
-        <item itemvalue="Python.Decision Tree" />
-        <item itemvalue="Python.KMeans" />
       </list>
     </recent_temporary>
   </component>
@@ -182,30 +183,30 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="508" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1602500788875" />
-    <state x="424" y="9" key="CommitChangelistDialog2" timestamp="1602335936569">
+    <state x="424" y="9" key="CommitChangelistDialog2" timestamp="1604068492162">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="424" y="9" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1602335936569" />
+    <state x="424" y="9" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1604068492162" />
     <state x="548" y="159" key="FileChooserDialogImpl" timestamp="1602883814433">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="548" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1602883814433" />
-    <state width="1515" height="330" key="GridCell.Tab.0.bottom" timestamp="1604067898394">
+    <state width="1515" height="405" key="GridCell.Tab.0.bottom" timestamp="1604075942387">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1604067898394" />
-    <state width="1515" height="330" key="GridCell.Tab.0.center" timestamp="1604067898394">
+    <state width="1515" height="405" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1604075942387" />
+    <state width="1515" height="405" key="GridCell.Tab.0.center" timestamp="1604075942387">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1604067898394" />
-    <state width="1515" height="330" key="GridCell.Tab.0.left" timestamp="1604067898393">
+    <state width="1515" height="405" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1604075942387" />
+    <state width="1515" height="405" key="GridCell.Tab.0.left" timestamp="1604075942386">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1604067898393" />
-    <state width="1515" height="330" key="GridCell.Tab.0.right" timestamp="1604067898394">
+    <state width="1515" height="405" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1604075942386" />
+    <state width="1515" height="405" key="GridCell.Tab.0.right" timestamp="1604075942387">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1515" height="330" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1604067898394" />
+    <state width="1515" height="405" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1604075942387" />
     <state width="1515" height="265" key="GridCell.Tab.1.bottom" timestamp="1602882458063">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

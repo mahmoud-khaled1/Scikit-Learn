@@ -15,18 +15,15 @@ import matplotlib.pyplot as plt
 
 
 #Load DataSet
-
 Cancer =load_breast_cancer()
 X=Cancer.data
 Y=Cancer.target
 
 #Split DataSet
-
 X_train,X_test,y_train,y_test=train_test_split(X,Y,random_state=44,test_size=0.33,shuffle=True)
 
 
 #Load Models for voting algorithm
-
 DT_Model=DecisionTreeClassifier(criterion="entropy",random_state=44,max_depth=3)
 LDA_Model=LinearDiscriminantAnalysis(n_components=1,solver='svd')
 SGD_Model=SGDClassifier(loss='log',penalty='l2',max_iter=10000,tol=1e-5)
@@ -39,13 +36,11 @@ VotingClassifierModel=VotingClassifier(estimators=[("DecisionTree",DT_Model),("L
 VotingClassifierModel.fit(X_train,y_train)
 
 
-#Pront Score of algorithm
-
+#Print Score of algorithm
 print("Train Score :",VotingClassifierModel.score(X_train,y_train))
 print("test Score :",VotingClassifierModel.score(X_test,y_test))
 
 #Predected
-
 Y_pre=VotingClassifierModel.predict(X_test)
 
 print(list(Y_pre[:20]))
