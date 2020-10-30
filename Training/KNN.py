@@ -1,5 +1,5 @@
 #KNN : use in Regression , Classification , unsupervised
-
+#1-SuperVised
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.datasets import load_iris
@@ -56,3 +56,28 @@ print(MAESqu_Value)
 
 median_value =median_absolute_error(y_true=y_test,y_pred=Y_pre,multioutput='uniform_average')
 print(median_value)
+
+#-------------------------------------------------------------------------
+#1-UnSuperVised
+
+from sklearn.neighbors import NearestNeighbors
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+#Load DataSets
+DataSets=pd.read_csv(r'D:\\ML\\SKLearn Library\\Slides && Data\\Data\\2.7 PCA\\data.csv')
+X=DataSets
+X_train=X.iloc[:1000,:]
+X_test=X.iloc[100:,:]
+#print(X.shape)
+
+#Applying algorithm
+NearestNeighborsModel=NearestNeighbors(n_neighbors=5,radius=1.0,algorithm='auto')
+NearestNeighborsModel.fit(X_train)
+
+#Show Details
+print("NearestNeighborsModel Train KNeighbors",NearestNeighborsModel.kneighbors(X_train[:5]))
+print("NearestNeighborsModel Train radius KNeighbors",NearestNeighborsModel.radius_neighbors(X_train[:1]))
+
+print("NearestNeighborsModel Test KNeighbors",NearestNeighborsModel.kneighbors(X_test[:5]))
+print("NearestNeighborsModel Test radius KNeighbors",NearestNeighborsModel.radius_neighbors(X_test[:1]))
