@@ -25,6 +25,7 @@ y_pred_train=AgglomerativeClusteringModel.fit_predict(X_train)
 y_pred_test=AgglomerativeClusteringModel.fit_predict(X_test)
 
 #draw the Hierarchical graph for Test set
+#You can start with dendrogram your data without use AgglomerativeClustering algorithm  to show How many cluster you want .
 dendrogram=sch.dendrogram(sch.linkage(X_test[:30,:],method='ward'))
 plt.title('Test Set')
 plt.xlabel('X Value')
@@ -54,5 +55,41 @@ plt.xlabel('X Value')
 plt.ylabel('y Value')
 plt.legend()
 plt.show()
+
+
+#----------------------------------------------
+#DBScan Clusters
+#	خوارزمية dbscan  و هي تقوم علي عمل كلسترز بتعليم دون اشراف , و تقوم علي فكرة ايجاد كثافة تواجد النقاط ,و هي تقوم علي فكرة الجيران الأقرب
+
+#Import Libraries
+from sklearn.cluster import DBSCAN
+
+#Applying DBSCANModel Model
+
+#eps				اقصي مسافة بين عينتين ليتم اعتبارهم من الجيران
+#algorithm			الطريقة المستخدمة في عمل الجيران وتكون :   auto, ball_tree, kd_tree, brute
+DBSCANModel = DBSCAN(metric='euclidean',eps=0.3,min_samples=10,algorithm='auto')
+y_pred_train = DBSCANModel.fit_predict(X_train)
+y_pred_test = DBSCANModel.fit_predict(X_test)
+
+#Calculating Details
+print('DBSCANModel labels are : ' ,DBSCANModel.labels_)
+print('DBSCANModel Train data are : ' ,y_pred_train)
+print('DBSCANModel Test data are : ' ,y_pred_test)
+print('----------------------------------------------------')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
