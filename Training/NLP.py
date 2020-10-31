@@ -71,7 +71,35 @@ print('Updates dataframe is : \n' ,df )
 
 print('Inverse Transform  : ' ,list(enc.inverse_transform([1,0,1,1,0,0])))
 
-#---------------------------------------------------
-#2-OneHotEncoder
+#------------------------------------------------------------------
+#ugualy is faster than LabelEncoder
+#2-OneHotEncoder : Create Column for every type in text column and put 1 for select type and other with 0
+#لصناعة مصفوفة الواحد من النصوص
+#و هي تقوم بتحويل العمود الذي يحتوي علي نصوص الي عدد من الأعمدة الجديدة , يساوي عدد الكلمات المختلفة , بحيث كل عمود يكون فيه اصفار و قيمة 1 فقط عندما تتواجد القيمة
+
+from sklearn.preprocessing import OneHotEncoder
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv(r'D:\ML\SKLearn Library\Slides && Data\Data\2.16 NLP\mall.csv')
+
+df = pd.DataFrame(data)
+
+
+print('Original dataframe is : \n' ,df )
+
+ohe  = OneHotEncoder()
+col = np.array(df['Genre'])
+col = col.reshape(len(col), 1)
+
+ohe.fit(col)
+
+newmatrix = ohe.transform(col).toarray()
+newmatrix = newmatrix.T
+
+df['Female'] = newmatrix[0]
+df['male'] = newmatrix[1]
+
+print('Updates dataframe is : \n' ,df )
 
 
