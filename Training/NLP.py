@@ -103,5 +103,14 @@ df['male'] = newmatrix[1]
 print('Updates dataframe is : \n' ,df )
 #-------------------------------------------
 #3-CountVectorizer
+#و هي تقوم بقراءة النصوص الأطول , و حذف الكلمات المألوفة , ثم عمل وظيفة مشابهة لوظيفة LabelEncoder , و بعدها يمكن استخدام اي خورازم معين لعمل التصنيف او التوقع
+
+#Example to make classification if messages is positive ot negative one
+from sklearn.feature_extraction.text import CountVectorizer
+import pandas as pd
+
+Count_vectorizer=CountVectorizer()
+simple_train = ['call you tonight', 'Call me a cab', 'please call me... PLEASE!']
+Count_vectorizer.fit(simple_train)
 
 
