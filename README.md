@@ -7,7 +7,7 @@
 # Step of any Project in machine learning :
 
 1. Data File and attach data
-2.   Data Cleaning and laern from Correlating between Features.
+2.   Data Cleaning and learn from Correlating between Features.
 3.   Feature selection
 4.   Data Scaling
 5.   Data Splitting
