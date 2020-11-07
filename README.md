@@ -12,4 +12,4 @@
 4.   Data Scaling
 5.   Data Splitting
 6.   Choice best algorithm (Regression-Classification-SVM-KMeans-KNN..........).
-////////////////////////////////
+# ////////////////////////////////
