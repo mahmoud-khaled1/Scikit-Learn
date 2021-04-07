@@ -114,3 +114,5 @@ simple_train = ['call you tonight', 'Call me a cab', 'please call me... PLEASE!'
 Count_vectorizer.fit(simple_train)
 
 
+words=Count_vectorizer.get_feature_names()
+print(words)
