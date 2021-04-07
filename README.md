@@ -7,8 +7,9 @@
 # Step of any Project in machine learning :
 
 1. Data File and attach data
-2.   Data Cleaning
+2.   Data Cleaning and learn from Correlating between Features.
 3.   Feature selection
 4.   Data Scaling
 5.   Data Splitting
-6.   Choice best algorithm (Regression-Classification-SVM-KMeans-KNN..........)
+6.   Choice best algorithm (Regression-Classification-SVM-KMeans-KNN..........).
+
